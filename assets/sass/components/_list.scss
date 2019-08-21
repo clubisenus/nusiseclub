@@ -1,5 +1,5 @@
 ///
-/// Ethereal by HTML5 UP
+/// Story by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
@@ -30,7 +30,7 @@
 			padding-left: 0;
 
 			li {
-				border-top: solid 1px _palette(border);
+				border-top: solid _size(border-width);
 				padding: 0.5rem 0;
 
 				&:first-child {
@@ -53,4 +53,34 @@
 		dd {
 			margin-left: _size(element-margin);
 		}
+
+		&.style2 {
+			dt {
+				width: 25%;
+				float: left;
+			}
+
+			dd {
+				width: 70%;
+				float: left;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+		}
 	}
+
+	@mixin color-list($p: null) {
+		ul {
+			&.alt {
+				li {
+					border-top-color: _palette($p, border);
+				}
+			}
+		}
+	}
+
+	@include color-list;
